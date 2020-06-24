@@ -3,7 +3,7 @@
 </div>
 
 <div align="center"> 
-  <img src="readme_img/git-github-logo.png" width="">
+  <img src="readme_img/git-github-logo.png" width="60%">
 </div>
 
 # Introducción al documento
@@ -32,6 +32,22 @@ El contenido de este documento son apuntes del [Curso profesional de Git y GitHu
 ## Introducción a Git
 
 ### ¿Qué es Git y GitHub?
+[Git](https://git-scm.com/) es un software de control de versiones diseñado por [Linus Torvalds](https://es.wikipedia.org/wiki/Linus_Torvalds), pensando en la eficiencia y la confiabilidad del mantenimiento de versiones de aplicaciones cuando estas tienen un gran número de archivos de código fuente. 
+
+En el siguiente enlace se encuentra el [libro oficial de Git](https://git-scm.com/book/es/v2)
+
+<div align="center"> 
+  <img src="readme_img/git-logo.png" width="60%">
+  <p></p>
+</div>
+
+En su lugar [GitHub](https://github.com/) es una forja para alojar proyectos utilizando el sistema de control de versiones Git. GitHub sería la red social de código para los programadores, tu propio curriculum vitae.
+
+<div align="center"> 
+  <img src="readme_img/github-logo.png" width="60%">
+  <p></p>
+</div>
+
 ### ¿Porque usar un sistema de control de versiones como Git?
 ### Instalando
 ### Editores de código, archivos binarios y de texto plano
