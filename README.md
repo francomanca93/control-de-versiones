@@ -24,6 +24,8 @@ El contenido de este documento son apuntes del [Curso profesional de Git y GitHu
 
 - [Comandos básicos de Git](#Comandos-básicos-de-Git)
   - [¿Qué es el staging y los repositorios? Ciclo básico de trabajo en Git](#¿Qué-es-el-staging-y-los-repositorios?-Ciclo-básico-de-trabajo-en-Git)
+    - [Ciclo de vida o estados de los archivos en Git](#Ciclo-de-vida-o-estados-de-los-archivos-en-Git)
+  - [Ramas o branch's y cómo funciona un Merge en Git](#Ramas-o-branch's-y-cómo-funciona-un-Merge-en-Git)
 - [Flujo de trabajo básico en Git](#Flujo-de-trabajo-básico-en-Git)
 - [Trabajando con repositorios remotos en GitHub](#Trabajando-con-repositorios-remotos-en-GitHub)
 - [Flujos de trabajo profesionales](#Flujos-de-trabajo-profesionales)
@@ -167,11 +169,47 @@ Comandos para mover archivos entre los estados de Git
 
 - `$ git status`: nos permite ver el estado de todos nuestros archivos y carpetas.
 - `$ git add`: nos ayuda a mover archivos del Untracked o Unstaged al estado Staged. Podemos usar `git nombre-del-archivo-o-carpeta` para añadir archivos y carpetas individuales o `git add -A` para mover todos los archivos de nuestro proyecto (tanto Untrackeds como unstageds).
-- `$ git reset HEAD`: nos ayuda a sacar archivos del estado Staged para devolverlos a su estado anterior. Si los archivos venían de Unstaged, vuelven allí. Y lo mismo se venían de Untracked.
+- `$ git reset HEAD`: nos ayuda a sacar archivos del estado Staged para devolverlos a su estado anterior. Si los archivos venían de Unstaged, vuelven allí. Y lo mismo si venían de Untracked.
 - `$ git commit`: nos ayuda a mover archivos de **Staged a Traked**. Esta es una ocasión especial, los archivos han sido guardado o actualizados en el repositorio. Git nos pedirá que dejemos un mensaje para recordar los cambios que hicimos y podemos usar el argumento -m para escribirlo (`$ git commit -m "mensaje"`).
 - `$ git rm`: este comando necesita alguno de los siguientes argumentos para poder ejecutarse correctamente:
   - `$ git rm --cached`: Mueve los archivos que le indiquemos al estado Untracked.
   - `$ git rm --force`: Elimina los archivos de Git y del disco duro. Git guarda el registro de la existencia de los archivos, por lo que podremos recuperarlos si es necesario (pero debemos usar comandos más avanzados).
+
+### Ramas o branch's y cómo funciona un Merge en Git
+
+Git es una base de datos muy precisa con todos los cambios y crecimiento que ha tenido nuestro proyecto. Los commits son la única forma de tener un registro de los cambios. Pero las ramas amplifican mucho más el potencial de Git.
+
+**Todos los commits se aplican sobre una rama.** Por defecto, siempre empezamos en la rama master (pero puedes cambiarle el nombre si no te gusta) y creamos nuevas ramas, a partir de esta, para crear flujos de trabajo independientes.
+
+Crear una nueva rama se trata de copiar un commit (de cualquier rama), pasarlo a otro lado (a otra rama) y continuar el trabajo de una parte específica de nuestro proyecto sin afectar el flujo de trabajo principal (que continúa en la rama master o la rama principal).
+
+Los equipos de desarrollo tienen un estándar: 
+- Todo lo que esté en la rama **master** va a producción. 
+- Las nuevas features, características y experimentos van en una rama **“development”** (para unirse a master cuando estén definitivamente listas).
+
+<div align="center"> 
+  <img src="readme_img/developer-git.png" width="">
+  <p></p>
+</div>
+
+- Los issues o errores se solucionan en una rama **“hotfix”** para unirse a master tan pronto como sea posible.
+
+<div align="center"> 
+  <img src="readme_img/hotfix-git.png" width="">
+  <p></p>
+</div>
+
+Crear una nueva rama lo conocemos como **Checkout**. Unir dos ramas lo conocemos como **Merge**.
+
+Podemos crear todas las ramas y commits que queramos. De hecho, podemos aprovechar el registro de cambios de Git para crear ramas, traer versiones viejas del código, arreglarlas y combinarlas de nuevo para mejorar el proyecto.
+
+Solo ten en cuenta que combinar estas ramas (sí, hacer “merge”) puede generar conflictos. Algunos archivos pueden ser diferentes en ambas ramas. Git es muy inteligente y puede intentar unir estos cambios automáticamente, pero no siempre funciona. En algunos casos, somos nosotros los que debemos resolver estos conflictos “a mano”.
+
+<div align="center"> 
+  <img src="readme_img/branchs-git.png
+" width="">
+  <p>Rama Master, Developer y Horfix(bugfixing) juntas</p>
+</div>
 
 ## Flujo de trabajo básico en Git
 ## Trabajando con repositorios remotos en GitHub
