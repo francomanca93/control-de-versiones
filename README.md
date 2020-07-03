@@ -237,6 +237,28 @@ Si queremos ver la diferencia entre una versión y otra, no necesariamente todos
 
 Recuerda que puedes obtener el ID de tus commits con el comando `$ git log`.
 
+### Volver en el tiempo en nuestro repositorio utilizando reset y checkout
+
+El comando `git checkout + ID del commit` nos permite viajar en el tiempo. Podemos volver a cualquier versión anterior de un archivo específico o incluso del proyecto entero. Esta también es la forma de crear ramas y movernos entre ellas.
+
+<div align="center"> 
+  <img src="readme_img/checkout-git.png
+" width="">
+  <p></p>
+</div>
+
+También hay una forma de hacerlo un poco más “ruda”: usando el comando `git reset`. En este caso, no solo “volvemos en el tiempo”, sino que borramos los cambios que hicimos después de este commit.
+
+Hay dos formas de usar `git reset`: 
+- Con el argumento `--hard`, borrando toda la información que tengamos en el área de history (y perdiendo todo para siempre). 
+- Un poco más seguro, con el argumento `--soft`, que mantiene allí los archivos del área de staging para que podamos aplicar nuestros últimos cambios pero desde un commit anterior.
+
+<div align="center"> 
+  <img src="readme_img/reset-git.png
+" width="">
+  <p></p>
+</div>
+
 ## Flujo de trabajo básico en Git
 ## Trabajando con repositorios remotos en GitHub
 ## Flujos de trabajo profesionales
