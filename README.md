@@ -25,7 +25,8 @@ El contenido de este documento son apuntes del [Curso profesional de Git y GitHu
 - [Comandos básicos de Git](#Comandos-básicos-de-Git)
   - [¿Qué es el staging y los repositorios? Ciclo básico de trabajo en Git](#¿Qué-es-el-staging-y-los-repositorios?-Ciclo-básico-de-trabajo-en-Git)
     - [Ciclo de vida o estados de los archivos en Git](#Ciclo-de-vida-o-estados-de-los-archivos-en-Git)
-  - [Ramas o branch's y cómo funciona un Merge en Git](#Ramas-o-branch's-y-cómo-funciona-un-Merge-en-Git)
+    - [Ramas o branch's y cómo funciona un Merge en Git](#Ramas-o-branch's-y-cómo-funciona-un-Merge-en-Git)
+    - [Analizar cambios en los archivos de tu proyecto con Git](#Analizar-cambios-en-los-archivos-de-tu-proyecto-con-Git)
 - [Flujo de trabajo básico en Git](#Flujo-de-trabajo-básico-en-Git)
 - [Trabajando con repositorios remotos en GitHub](#Trabajando-con-repositorios-remotos-en-GitHub)
 - [Flujos de trabajo profesionales](#Flujos-de-trabajo-profesionales)
@@ -206,10 +207,27 @@ Podemos crear todas las ramas y commits que queramos. De hecho, podemos aprovech
 Solo ten en cuenta que combinar estas ramas (sí, hacer “merge”) puede generar conflictos. Algunos archivos pueden ser diferentes en ambas ramas. Git es muy inteligente y puede intentar unir estos cambios automáticamente, pero no siempre funciona. En algunos casos, somos nosotros los que debemos resolver estos conflictos “a mano”.
 
 <div align="center"> 
-  <img src="readme_img/branchs-git.png
+  <img src="readme_img/branch-git.png
 " width="">
   <p>Rama Master, Developer y Horfix(bugfixing) juntas</p>
 </div>
+
+### Crea un repositorio de Git y haz tu primer commit
+
+Si quieres ver los archivos ocultos de una carpeta en VSCode vas a de `File > Preference > Settings > "Files: Exclude"`. Removemos el archivo oculto que queremos mostrar con *"Remove Exclude Item"*. Si lo queremos argregar a archivos ocultos nuevamente clickeamos en *"Add Pattern"* y agregamos el archivo `**/.nombre_del_archivo_o_carpeta_oculta`. Desde terminal tambien los podemos ver si el comando `$ ls -al`.
+
+Le indicaremos a Git que queremos crear un nuevo repositorio para utilizar su sistema de control de versiones. Solo debemos posicionarnos en la carpeta raíz de nuestro proyecto y ejecutar el comando `git init`.
+
+Recuerda que al ejecutar este comando (y de aquí en adelante) vamos a tener una nueva carpeta oculta llamada `.git` con toda la base de datos con cambios atómicos en nuestro proyecto.
+
+Recuerda que Git está optimizado para trabajar en equipo, por lo tanto, debemos darle un poco de información sobre nosotros. No debemos hacerlo todas las veces que ejecutamos un comando, basta con ejecutar solo una sola vez los siguientes comandos con tu información:
+
+```
+$ git config --global user.email "tu@email.com"
+$ git config --global user.name "Tu Nombre"
+```
+
+Existen muchas otras configuraciones de Git que puedes encontrar ejecutando el comando `git config --list` (o solo `git config` para ver una explicación más detallada).
 
 ## Flujo de trabajo básico en Git
 ## Trabajando con repositorios remotos en GitHub
