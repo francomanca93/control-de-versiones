@@ -28,6 +28,7 @@ El contenido de este documento son apuntes del [Curso profesional de Git y GitHu
     - [Ramas o branch's y cómo funciona un Merge en Git](#Ramas-o-branch's-y-cómo-funciona-un-Merge-en-Git)
     - [Analizar cambios en los archivos de tu proyecto con Git](#Analizar-cambios-en-los-archivos-de-tu-proyecto-con-Git)
 - [Flujo de trabajo básico en Git](#Flujo-de-trabajo-básico-en-Git)
+  - [Flujo de trabajo básico con un repositorio remoto](#Flujo-de-trabajo-básico-con-un-repositorio-remoto)
 - [Trabajando con repositorios remotos en GitHub](#Trabajando-con-repositorios-remotos-en-GitHub)
 - [Flujos de trabajo profesionales](#Flujos-de-trabajo-profesionales)
 - [Multiples entornos de trabajo](#Multiples-entornos-de-trabajo)
@@ -302,6 +303,90 @@ En cambio, si usamos `git reset HEAD`, lo único que haremos será mover estos c
 
 
 ## Flujo de trabajo básico en Git
+### Flujo de trabajo básico con un repositorio remoto
+
+1. Creamos nuestro Directorio de trabajo. 
+2. Iniciamos nuestro staging y repositorio local con `$ git init`.
+
+<div align="center"> 
+  <table>
+    <tr>
+    <td><img src="readme_img/init.png" width=""></td>
+    <td><img src="readme_img/staging-repo-local.png" width=""></td>
+    </tr>
+  </table>
+</div>
+
+> La magia de git es que cada persona que tenga una copia del repositorio tiene el historial completo del proyecto. 
+
+3. Empezamos agregando archivos al área de staging con `$ git add nombre_archivo.extension` o agregamos todo lo hecho con `$ git add .`
+
+Si el archio es agregado estará **tracked** o restreado, de lo contrario no estará restreado o **untracked** y por ende no se guardará en git. 
+Esto es temporal ya que desaparecerá si reseteamos o apagamos nuestra máquina, debido al __garbage collector__
+
+<div align="center"> 
+  <table>
+    <tr>
+    <td><img src="readme_img/add.png" width=""></td>
+    <td><img src="readme_img/add2.png" width=""></td>
+    </tr>
+  </table>
+</div>
+
+4. Enviamos nuestro archivo al repositorio local con `git commit -m "MENSAJE DEL COMMIT"`
+
+<div align="center"> 
+  <table>
+    <tr>
+    <td><img src="readme_img/commit.png" width=""></td>
+    </tr>
+  </table>
+</div>
+
+Por ahora, nuestro proyecto vive únicamente en nuestra computadora. Repitiendo los pasos 3 y 4, crearemos una historia de nuestro proyecto. Y esto significa que no hay forma de que otros miembros del equipo trabajen en él.
+
+Para solucionar esto están los servidores remotos: un nuevo estado que deben seguir nuestros archivos para conectarse y trabajar con equipos de cualquier parte del mundo.
+
+Estos servidores remotos pueden estar alojados en **GitHub, GitLab, BitBucket, entre otros**. Lo que van a hacer es guardar el mismo repositorio que tienes en tu computadora y darnos una URL con la que todos podremos acceder a los archivos del proyecto para descargarlos, hacer cambios y volverlos a enviar al servidor remoto para que otras personas vean los cambios, comparen sus versiones y creen nuevas propuestas para el proyecto.
+
+Nuestro proyecto puede estar alojado en un servido remoto. ¿Como hacemos para traernos un proyecto remoto?
+
+5. `$ git clone url_del_servidor_remoto`: Nos permite descargar los archivos de la última versión de la rama principal y todo el historial de cambios en la carpeta **.git**.
+
+6. `$ git push`: Luego de hacer `git add` y `git commit` debemos ejecutar este comando para mandar los cambios al _servidor remoto_.
+
+Este paso se puede repetir tantas veces como sea necesario si enviamos commit's a nuestro repo.
+<div align="center"> 
+  <table>
+    <tr>
+    <td><img src="readme_img/clone-url.png" width=""></td>
+    <td><img src="readme_img/push.png" width=""></td>
+    </tr>
+  </table>
+</div>
+
+7. `$ git fetch`: Lo usamos para traer actualizaciones del servidor remoto y guardarlas en nuestro repositorio local (en caso de que hayan, por supuesto). Esto no lo trae a nuestros archivos, solo al repo local. 
+8. `$ git merge`: También usamos el comando `git fetch` con servidores remotos. Lo necesitamos para combinar los últimos cambios del servidor remoto y nuestro directorio de trabajo.
+
+<div align="center"> 
+  <table>
+    <tr>
+    <td><img src="readme_img/fetch.png" width=""></td>
+    <td><img src="readme_img/merge.png" width=""></td>
+    </tr>
+  </table>
+</div>
+
+9. `$ git pull`: Básicamente, `git fetch` y `git merge` al mismo tiempo.
+
+<div align="center"> 
+  <table>
+    <tr>
+    <td><img src="readme_img/pull.png" width=""></td>
+    </tr>
+  </table>
+</div>
+
 ## Trabajando con repositorios remotos en GitHub
 ## Flujos de trabajo profesionales
 ## Multiples entornos de trabajo
