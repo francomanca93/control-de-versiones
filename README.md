@@ -208,8 +208,7 @@ Podemos crear todas las ramas y commits que queramos. De hecho, podemos aprovech
 Solo ten en cuenta que combinar estas ramas (sí, hacer “merge”) puede generar conflictos. Algunos archivos pueden ser diferentes en ambas ramas. Git es muy inteligente y puede intentar unir estos cambios automáticamente, pero no siempre funciona. En algunos casos, somos nosotros los que debemos resolver estos conflictos “a mano”.
 
 <div align="center"> 
-  <img src="readme_img/branch-git.png
-" width="">
+  <img src="readme_img/branch-git.png" width="">
   <p>Rama Master, Developer y Horfix(bugfixing) juntas</p>
 </div>
 
@@ -243,8 +242,7 @@ Recuerda que puedes obtener el ID de tus commits con el comando `$ git log`.
 El comando `git checkout + ID del commit` nos permite viajar en el tiempo. Podemos volver a cualquier versión anterior de un archivo específico o incluso del proyecto entero. Esta también es la forma de crear ramas y movernos entre ellas.
 
 <div align="center"> 
-  <img src="readme_img/checkout-git.png
-" width="">
+  <img src="readme_img/checkout-git.png" width="">
   <p></p>
 </div>
 
@@ -255,8 +253,7 @@ Hay dos formas de usar `git reset`:
 - Un poco más seguro, con el argumento `--soft`, que mantiene allí los archivos del área de staging para que podamos aplicar nuestros últimos cambios pero desde un commit anterior.
 
 <div align="center"> 
-  <img src="readme_img/reset-git.png
-" width="">
+  <img src="readme_img/reset-git.png" width="">
   <p></p>
 </div>
 
@@ -386,6 +383,38 @@ Este paso se puede repetir tantas veces como sea necesario si enviamos commit's 
     </tr>
   </table>
 </div>
+
+#### Introducción a las ramas o branches de Git
+
+Las ramas son la forma de hacer cambios en nuestro proyecto sin afectar el flujo de trabajo de la rama principal. Esto porque queremos trabajar una parte muy específica de la aplicación o simplemente experimentar.
+
+Cuando uno hace una nueva rama, en realidad esta haciendo una copia del último commit en otro _"lado"_ para que los cambios sean independientes. 
+
+La cabecera o **HEAD** representan la rama y el commit de esa rama donde estamos trabajando. Por defecto, esta cabecera aparecerá en el último commit de nuestra rama principal. Pero podemos cambiarlo al crear una rama.
+
+- `$ git status`: Para revisar en que rama me encuentro.
+
+<div align="center"> 
+  <img src="readme_img/branch_merge.png" width="">
+</div>
+
+- **Comandos branch**
+  - `$ git branch nombre_rama`: Crea una nueva rama con el nombre __nombre_rama__.
+  - `$ git branch -l`: Lista todas las ramas que existen.
+  - `$ git branch -d nombre_rama`: Elimina la rama con el nombre __nombre_rama__. Con *-d* se fuerza el borrado.
+  - `$ git branch -m nombre_rama rama_nueva`: Permite renombrar __nombre_rama__ con __rama_nueva__.
+
+- **Comando checkout**
+  - `$ git checkout nombre_rama`: Permite moverse entre ramas hacia la ramma __nombre_rama__.
+  - `$ git checkout -b nombre_rama`: Crea una nueva rama con el nombre __nombre_rama__ y se posiciona en ella.
+
+Tambien podemos movernos en el tiempo a cualquier otro commit de cualquier otra rama con los comandos.
+- `$ git reset id-commit`
+- `$ git checkout rama-o-id-commit`
+
+Cada vez que nos movemos de una rama a otra los archivos también vuelven al estado en el que se encuentren.
+
+En resumen, las ramas en git son importantes porque te permiten independizar los cambios en un proyecto de tal forma que se pueda realizar avances optimizando el tiempo y el orden. La herramienta es útil porque se pueden fusionar dichos cambios sin perder registro de las versiones anteriores. 
 
 ## Trabajando con repositorios remotos en GitHub
 ## Flujos de trabajo profesionales
