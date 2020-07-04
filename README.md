@@ -31,6 +31,7 @@ El contenido de este documento son apuntes del [Curso profesional de Git y GitHu
   - [Flujo de trabajo básico con un repositorio remoto](#Flujo-de-trabajo-básico-con-un-repositorio-remoto)
   - [Resumen del flujo de trabajo de git](#Resumen-del-flujo-de-trabajo-de-git)
   - [Introducción a las ramas o branches de Git](#Introducción-a-las-ramas-o-branches-de-Git)
+  - [Fusión de ramas con Git merge](#Fusión-de-ramas-con-Git-merge)
 - [Trabajando con repositorios remotos en GitHub](#Trabajando-con-repositorios-remotos-en-GitHub)
 - [Flujos de trabajo profesionales](#Flujos-de-trabajo-profesionales)
 - [Multiples entornos de trabajo](#Multiples-entornos-de-trabajo)
@@ -386,13 +387,13 @@ Este paso se puede repetir tantas veces como sea necesario si enviamos commit's 
   </table>
 </div>
 
-#### Resumen del flujo de trabajo de git
+### Resumen del flujo de trabajo de git
 
 <div align="center"> 
   <img src="readme_img/workflow.png" width="">
 </div>
 
-#### Introducción a las ramas o branches de Git
+### Introducción a las ramas o branches de Git
 
 Las ramas son la forma de hacer cambios en nuestro proyecto sin afectar el flujo de trabajo de la rama principal. Esto porque queremos trabajar una parte muy específica de la aplicación o simplemente experimentar.
 
@@ -403,7 +404,7 @@ La cabecera o **HEAD** representan la rama y el commit de esa rama donde estamos
 - `$ git status`: Para revisar en que rama me encuentro.
 
 <div align="center"> 
-  <img src="readme_img/branch_merge.png" width="">
+  <img src="readme_img/branch.png" width="">
 </div>
 
 - **Comandos branch**
@@ -423,6 +424,29 @@ Tambien podemos movernos en el tiempo a cualquier otro commit de cualquier otra 
 Cada vez que nos movemos de una rama a otra los archivos también vuelven al estado en el que se encuentren.
 
 En resumen, las ramas en git son importantes porque te permiten independizar los cambios en un proyecto de tal forma que se pueda realizar avances optimizando el tiempo y el orden. La herramienta es útil porque se pueden fusionar dichos cambios sin perder registro de las versiones anteriores. 
+
+### Fusión de ramas con Git merge
+
+El comando `git merge` nos permite crear un nuevo commit con la combinación de dos ramas (la rama donde nos encontramos cuando ejecutamos el comando y la rama que indiquemos después del comando).
+
+```py
+# Crear un nuevo commit en la rama master combinando
+# los cambios de la rama que estamos editando (ejemplo: developer):
+$ git checkout master
+$ git merge developer
+
+# Crear un nuevo commit en la rama developer combinando
+# los cambios de cualquier otra rama:
+$ git checkout developer
+$ git merge cualquier-otra-rama
+```
+<div align="center"> 
+  <img src="readme_img/branch_merge.png" width="">
+</div>
+
+Git sabe qué cambios queremos conservar de una rama y qué otros de la otra. El problema es que no siempre puede adivinar, sobretodo en algunos casos donde dos ramas tienen actualizaciones diferentes en ciertas líneas en los archivos. Esto lo conocemos como un **conflicto** y aprenderemos a solucionarlos en la siguiente sección.
+
+Recuerda que al ejecutar el comando `git checkout` para cambiar de rama o commit puedes perder el trabajo que no hayas guardado. **Guarda tus cambios con `git commit -am "MENSAJE"` antes de hacer `git checkout`**.
 
 ## Trabajando con repositorios remotos en GitHub
 ## Flujos de trabajo profesionales
