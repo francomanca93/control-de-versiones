@@ -29,6 +29,8 @@ El contenido de este documento son apuntes del [Curso profesional de Git y GitHu
     - [Analizar cambios en los archivos de tu proyecto con Git](#Analizar-cambios-en-los-archivos-de-tu-proyecto-con-Git)
 - [Flujo de trabajo básico en Git](#Flujo-de-trabajo-básico-en-Git)
   - [Flujo de trabajo básico con un repositorio remoto](#Flujo-de-trabajo-básico-con-un-repositorio-remoto)
+  - [Resumen del flujo de trabajo de git](#Resumen-del-flujo-de-trabajo-de-git)
+  - [Introducción a las ramas o branches de Git](#Introducción-a-las-ramas-o-branches-de-Git)
 - [Trabajando con repositorios remotos en GitHub](#Trabajando-con-repositorios-remotos-en-GitHub)
 - [Flujos de trabajo profesionales](#Flujos-de-trabajo-profesionales)
 - [Multiples entornos de trabajo](#Multiples-entornos-de-trabajo)
@@ -382,6 +384,12 @@ Este paso se puede repetir tantas veces como sea necesario si enviamos commit's 
     <td><img src="readme_img/pull.png" width=""></td>
     </tr>
   </table>
+</div>
+
+#### Resumen del flujo de trabajo de git
+
+<div align="center"> 
+  <img src="readme_img/workflow.png" width="">
 </div>
 
 #### Introducción a las ramas o branches de Git
