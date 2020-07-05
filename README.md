@@ -34,6 +34,9 @@ El contenido de este documento son apuntes del [Curso profesional de Git y GitHu
   - [Fusión de ramas con Git merge](#Fusión-de-ramas-con-Git-merge)
   - [Solución de conflictos al hacer un merge](#Solución-de-conflictos-al-hacer-un-merge)
 - [Trabajando con repositorios remotos en GitHub](#Trabajando-con-repositorios-remotos-en-GitHub)
+  - [Uso de GitHub](#Uso-de-GitHub)
+  - [Cómo funcionan las llaves públicas y privadas](#Cómo-funcionan-las-llaves-públicas-y-privadas)
+  - [Configura tus llaves SSH en local](#Configura-tus-llaves-SSH-en-local)
 - [Flujos de trabajo profesionales](#Flujos-de-trabajo-profesionales)
 - [Multiples entornos de trabajo](#Multiples-entornos-de-trabajo)
 - [Comandos en Git para casos de emergencia](#Comandos-en-Git-para-casos-de-emergencia)
@@ -547,6 +550,48 @@ La forma de hacerlo es la siguiente:
 Puedes compartir tu llave pública pero nunca tu llave privada.
 
 En la siguiente clase vamos a crear nuestras llaves para compartir archivos con GitHub sin correr el riesgo de que sean interceptados.
+
+### Configura tus llaves SSH en local
+
+Si conectamos GitHub por https nuestro usuario y contraseña se guardan en el entorno local, y eres vulnerable a password cracking. 
+
+Si conectamos Github por SSH, además de que la conexión es más segura, no tenemos que volver a ingresar nuestras credenciales de Github.
+
+Para la conexión con Github, al enviarle nuestra llave pública Github nos envía cifrado su propia llave pública. 
+
+Las llaves SSH no son por repositorio, son por persona
+
+Los pasos para la creación y configuración de nuestra llave so los siguientes: 
+
+1. Generar tus llaves SSH. Recuerda que es muy buena idea proteger tu llave privada con una contraseña.
+
+- `$ ssh-keygen -t rsa -b 4096 -C "tu@email.com"`
+
+
+<div align="center"> 
+  <img src="readme_img/generar-llave-ssh.jpg" width="">
+  <p></p>
+</div>
+
+2. Revisar que las llaves han sido creadas con exito en una carpeta oculta **.ssh**.
+
+<div align="center"> 
+  <img src="readme_img/llaves.png" width="">
+  <p></p>
+</div>
+
+3. Terminar de configurar nuestro sistema.
+
+En Windows y Linux:
+
+- Encender el "servidor" de llaves SSH de tu computadora:
+    - `$ eval $(ssh-agent -s)`
+```
+# Deberia aparecer en consola algo como lo siguiente
+Agent pid 24203
+```
+- Añadir tu llave SSH a este "servidor":
+  - `$ ssh-add ruta-donde-guardaste-tu-llave-privada`
 
 
 ## Flujos de trabajo profesionales
