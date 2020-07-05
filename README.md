@@ -32,6 +32,7 @@ El contenido de este documento son apuntes del [Curso profesional de Git y GitHu
   - [Resumen del flujo de trabajo de git](#Resumen-del-flujo-de-trabajo-de-git)
   - [Introducción a las ramas o branches de Git](#Introducción-a-las-ramas-o-branches-de-Git)
   - [Fusión de ramas con Git merge](#Fusión-de-ramas-con-Git-merge)
+  - [Solución de conflictos al hacer un merge](#Solución-de-conflictos-al-hacer-un-merge)
 - [Trabajando con repositorios remotos en GitHub](#Trabajando-con-repositorios-remotos-en-GitHub)
 - [Flujos de trabajo profesionales](#Flujos-de-trabajo-profesionales)
 - [Multiples entornos de trabajo](#Multiples-entornos-de-trabajo)
@@ -447,6 +448,42 @@ $ git merge cualquier-otra-rama
 Git sabe qué cambios queremos conservar de una rama y qué otros de la otra. El problema es que no siempre puede adivinar, sobretodo en algunos casos donde dos ramas tienen actualizaciones diferentes en ciertas líneas en los archivos. Esto lo conocemos como un **conflicto** y aprenderemos a solucionarlos en la siguiente sección.
 
 Recuerda que al ejecutar el comando `git checkout` para cambiar de rama o commit puedes perder el trabajo que no hayas guardado. **Guarda tus cambios con `git commit -am "MENSAJE"` antes de hacer `git checkout`**.
+
+### Solución de conflictos al hacer un merge
+
+**Git nunca borra nada** a menos que nosotros se lo indiquemos. Cuando usamos los comandos `git merge` o `git checkout` estamos cambiando de rama o creando un nuevo commit, no borrando ramas ni commits (recuerda que puedes borrar commits con `git reset` y ramas con `git branch -d`).
+
+Git es muy inteligente y puede resolver algunos conflictos automáticamente: cambios, nuevas líneas, entre otros. Pero algunas veces no sabe cómo resolver estas diferencias, por ejemplo, cuando dos ramas diferentes hacen cambios distintos a una misma línea.
+
+<div align="center"> 
+  <img src="readme_img/conflicto-visual.png" width="">
+</div>
+
+Esto lo conocemos como **conflicto** y lo podemos resolver manualmente, solo debemos hacer el merge, ir a nuestro editor de código y elegir si queremos quedarnos con alguna de estas dos versiones o algo diferente. Algunos editores de código como **VSCode** nos ayudan a resolver estos conflictos sin necesidad de borrar o escribir líneas de texto, basta con hundir un botón y guardar el archivo.
+
+- Como veriamos un conflicto desde un editor de texto plano. 
+```
+            <div id="cabecera">
+                Hyperblog
+<<<<<<< HEAD
+                <span id="tagline">Tu blog maestro</span>
+=======
+                <span id="tagline">Tu blog de la cabecera. </span>
+>>>>>>> cabecera
+            </div>
+```
+- Como veriamos un conflicto en VSCode
+<div align="center"> 
+  <img src="readme_img/conflicto.png" width="">
+</div>
+
+**¿Como resolvemos el conflicto?** 
+- Debemos crear un nuevo commit para aplicar los cambios del merge.
+- Si Git puede resolver el conflicto hará commit automáticamente. 
+- Pero, en caso de no pueda resolverlo, debemos solucionarlo y hacer el commit. Vamos a las lineas donde están los conflictos y comparamos los códigos. Debemos tomar una decisión, la mejor sería la que resuelva el problema de forma mas eficiente y efectiva.
+
+Los archivos con conflictos por el comando `git merge` entran en un nuevo estado que conocemos como **Unmerged**. Funcionan muy parecido a los archivos en estado **Unstaged**, algo así como un estado intermedio entre **Untracked y Unstaged**, solo debemos ejecutar `git add` para pasarlos al área de staging y `git commit` para aplicar los cambios en el repositorio.
+
 
 ## Trabajando con repositorios remotos en GitHub
 ## Flujos de trabajo profesionales
