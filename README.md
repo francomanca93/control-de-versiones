@@ -486,6 +486,47 @@ Los archivos con conflictos por el comando `git merge` entran en un nuevo estado
 
 
 ## Trabajando con repositorios remotos en GitHub
+### Uso de GitHub
+
+<div align="center"> 
+  <img src="readme_img/github-logo.png" width="60%">
+  <p></p>
+</div>
+
+GitHub es una plataforma que nos permite guardar repositorios de Git que podemos usar como servidores remotos y ejecutar algunos comandos de forma visual e interactiva (sin necesidad de la consola de comandos).
+
+Luego de crear nuestra cuenta, podemos crear o importar repositorios, crear organizaciones y proyectos de trabajo, descubrir repositorios de otras personas, contribuir a esos proyectos, dar estrellas y muchas otras cosas.
+
+El **`README.md`** es el archivo que veremos por defecto al entrar a un repositorio. Es una muy buena práctica configurarlo para describir el proyecto, los requerimientos y las instrucciones que debemos seguir para contribuir correctamente.
+
+Para clonar un repositorio desde **GitHub** (o cualquier otro servidor remoto) debemos copiar la URL (por ahora, usando HTTPS) y ejecutar el comando `git clone + la URL` que acabamos de copiar. Esto descargara la versión de nuestro proyecto que se encuentra en GitHub.
+
+Sin embargo, esto solo funciona para las personas que quieren empezar a contribuir en el proyecto. Si queremos conectar el repositorio de GitHub con nuestro repositorio local, el que creamos con `git init`, debemos ejecutar las siguientes instrucciones:
+
+
+1. Guardar la URL del repositorio de GitHub con el nombre de origin.
+
+<div align="center"> 
+  <img src="readme_img/github-clone.png" width="60%">
+  <p></p>
+</div>
+
+- `$ git remote add origin URL`
+
+2. Verificar que la URL se haya guardado correctamente:
+
+- `$ git remote`
+- `$ git remote -v`
+
+3. Traer la versión del repositorio remoto y hacer merge para crear un commit con los archivos de ambas partes. Podemos usar:
+- `$ git fecht`
+- `$ git merge`
+- `$ git pull origin master`
+- `$ git pull origin master --allow-unrelated-histories` (Este ultimo es para por si se presentan conflictos).
+
+4. Ahora sí podemos hacer `git push` para guardar los cambios de nuestro repositorio local en GitHub:
+- `git push origin master`
+
 ## Flujos de trabajo profesionales
 ## Multiples entornos de trabajo
 ## Comandos en Git para casos de emergencia
