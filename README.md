@@ -593,6 +593,34 @@ Agent pid 24203
 - Añadir tu llave SSH a este "servidor":
   - `$ ssh-add ruta-donde-guardaste-tu-llave-privada`
 
+### Conexión a GitHub con SSH
+
+Luego de crear nuestras llaves SSH podemos entregarle la llave pública a GitHub para comunicarnos de forma segura y sin necesidad de escribir nuestro usuario y contraseña todo el tiempo.
+
+Para esto debes entrar a la [Configuración de Llaves SSH en GitHub](https://github.com/settings/keys), crear una nueva llave con el nombre que le quieras dar y el contenido de la llave pública de tu computadora.
+
+Ahora podemos actualizar la URL que guardamos en nuestro repositorio remoto, solo que, en vez de guardar la URL con HTTPS, vamos a usar la URL con SSH. Los pasos son los siguientes:
+
+> NOTA: **origin** es un nombre estandar en la industria que se usa para ponerle a nuestros repositorios. Les podriamos poner otro nombre si quisieramos. 
+1. Vemos con quien está enlazado nuestro repositorio con:
+- `git remote -v`
+2. Si no lo tenemos enlazado con ssh, ingresamos el siguiente comando. 
+- `$ git remote set-url origin url-ssh-del-repositorio-en-github`
+
+<div align="center"> 
+  <img src="readme_img/llave-ssh.png" width="">
+  <p></p>
+</div>
+
+3. Enlazamos nuestro repositorio local con el remoto:
+- `git pull`
+
+4. Vamos a usar pull y nos traemos los posibles cambios que existan en el repositorio remoto con:
+- `git pull nombre_rama_repositorio_remoto nombre_rama_rapo_local` >>> Ejemplo:
+`git pull origin master`
+
+5. Enviamos nuestros cambios al repositorio remoto:
+- `git push origin master`
 
 ## Flujos de trabajo profesionales
 ## Multiples entornos de trabajo
