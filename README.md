@@ -37,6 +37,8 @@ El contenido de este documento son apuntes del [Curso profesional de Git y GitHu
   - [Uso de GitHub](#Uso-de-GitHub)
   - [Cómo funcionan las llaves públicas y privadas](#Cómo-funcionan-las-llaves-públicas-y-privadas)
   - [Configura tus llaves SSH en local](#Configura-tus-llaves-SSH-en-local)
+  - [Visualización árbol en Git](#Visualización-árbol-en-Git)
+  - [Tags y versiones en Git y GitHub](#Tags-y-versiones-en-Git-y-GitHub)
 - [Flujos de trabajo profesionales](#Flujos-de-trabajo-profesionales)
 - [Multiples entornos de trabajo](#Multiples-entornos-de-trabajo)
 - [Comandos en Git para casos de emergencia](#Comandos-en-Git-para-casos-de-emergencia)
@@ -644,6 +646,40 @@ El siguiente gráfico corresponde a un proyecto de juguete ["hyperblog"](https:/
 
 El comando al ser grande, podemos no acordarnos entonces podemos ponerle un alias de la siguiente forma:
 - `$ alias arbolito="git log --all --graph --decorate --oneline"`
+
+### Tags y versiones en Git y GitHub
+
+Los tags o etiquetas nos permiten asignar versiones a los commits con cambios más importantes o significativos de nuestro proyecto. Esta funcionalidad se usa típicamente para marcar versiones de lanzamiento (v1.0 por ejemplo)
+
+Comandos para trabajar con etiquetas:
+
+- Crear un nuevo tag y asignarlo a un commit:
+
+`$ git tag -a nombre-del-tag id-del-commit`
+
+Ejemplo: `$ git tag -a v0.1 -m "Resultado de las primeras clases del curso" af03c00 `
+
+- Borrar un tag en el repositorio local:
+
+`$ git tag -d nombre-del-tag`
+
+- Listar los tags de nuestro repositorio local: 
+
+`$ git tag`
+
+`$ git show-ref --tags`
+
+- Publicar un tag en el repositorio remoto:
+
+`$ git push origin --tags`
+
+- Borrar un tag del repositorio remoto: 
+
+`$ git tag -d nombre-del-tag`>>> Para borrarlo del repo local
+
+`$ git push origin :refs/tags/nombre-del-tag`>>> Para desvicularlo y borrarlo de GitHub
+
+> **Conclusión**: Los tags sirven para marcar un punto específico en la historia de nuestro trabajo(para los releases). De esta forma, podemos hacer un seguimiento al progreso de nuestro proyecto e identificar los cambios más fácilmente entre cada versión. Tambien podriamos hacer un checkout a uno de los tags.
 
 ## Flujos de trabajo profesionales
 ## Multiples entornos de trabajo
