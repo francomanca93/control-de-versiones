@@ -622,6 +622,29 @@ Ahora podemos actualizar la URL que guardamos en nuestro repositorio remoto, sol
 5. Enviamos nuestros cambios al repositorio remoto:
 - `git push origin master`
 
+### Visualización árbol en Git
+
+Para ver el historial de cambios de mi rama lo hago con: 
+- `$ git log`
+
+Si quiero ver completo los cambios de mi proyecto lo podemos hacer con el comando:
+- `$ git log --all`
+
+Si quiero ver un arbol con los log:
+- `$ git log --all --graph`
+
+Por último, si quiero ver el arbol comprimido por consola lo hacemos de la siguiente manera:
+- `$ git log --all --graph --decorate --oneline`
+
+El siguiente gráfico corresponde a un proyecto de juguete ["hyperblog"](https://github.com/francomanca93/hyperblog) para un curso profesional de Git y GitHub
+<div align="center"> 
+  <img src="readme_img/arbolito.png" width="">
+  <p></p>
+</div>
+
+El comando al ser grande, podemos no acordarnos entonces podemos ponerle un alias de la siguiente forma:
+- `$ alias arbolito="git log --all --graph --decorate --oneline"`
+
 ## Flujos de trabajo profesionales
 ## Multiples entornos de trabajo
 ## Comandos en Git para casos de emergencia
