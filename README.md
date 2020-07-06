@@ -681,6 +681,43 @@ Ejemplo: `$ git tag -a v0.1 -m "Resultado de las primeras clases del curso" af03
 
 > **Conclusión**: Los tags sirven para marcar un punto específico en la historia de nuestro trabajo(para los releases). De esta forma, podemos hacer un seguimiento al progreso de nuestro proyecto e identificar los cambios más fácilmente entre cada versión. Tambien podriamos hacer un checkout a uno de los tags.
 
+### Manejo de ramas en GitHub
+
+Puedes trabajar con ramas que nunca envías a GitHub, así como pueden haber ramas importantes en GitHub que nunca usas en el repositorio local. Lo importante es que aprendas a manejarlas para trabajar profesionalmente.
+<div align="center"> 
+  <img src="readme_img/ramas.png" width="">
+  <p></p>
+</div>
+
+- Crear una rama en el repositorio local: 
+
+`$ git branch nombre-de-la-rama`
+
+`$ git checkout -b nombre-de-la-rama`
+
+- Publicar una rama local al repositorio remoto: 
+
+`$ git push origin nombre-de-la-rama`
+
+- Eliminar una rama remota una rama remota (en GitHub). Básicamente, lo que hace es eliminar el apuntador del servidor: 
+
+`$ git pull origin --delete nombre-rama`
+
+- Revisamo en GitHub que las ramas fueron enviadas correctamente. 
+<div align="center"> 
+  <img src="readme_img/ramas-github.png" width="">
+  <p></p>
+</div>
+
+Podemos ver gráficamente nuestro entorno y flujo de trabajo local con Git usando el comando la extension [Git Graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph) de VSCode.
+
+El [proyecto hyperblog](https://github.com/francomanca93/hyperblog) se vería como sigue: 
+<div align="center"> 
+  <img src="readme_img/gitgraph.png" width="">
+</div>
+
+> **Conclusión**: Las ramas son importantes ya que representan un área de trabajo independiente de desarrollo dentro de nuestro proyecto. Al igual que en nuestro repositorio local, en GitHub podemos trabajar con ramas y compararlos para unirlos con nuestros cambios, utiizando Git.
+ 
 ## Flujos de trabajo profesionales
 ## Multiples entornos de trabajo
 ## Comandos en Git para casos de emergencia
