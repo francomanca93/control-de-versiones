@@ -717,7 +717,19 @@ El [proyecto hyperblog](https://github.com/francomanca93/hyperblog) se vería co
 </div>
 
 > **Conclusión**: Las ramas son importantes ya que representan un área de trabajo independiente de desarrollo dentro de nuestro proyecto. Al igual que en nuestro repositorio local, en GitHub podemos trabajar con ramas y compararlos para unirlos con nuestros cambios, utiizando Git.
- 
+
+### Configurar múltiples colaboradores en un repositorio de GitHub
+
+Por defecto, cualquier persona puede clonar o descargar tu proyecto desde GitHub, pero no pueden crear commits, ni ramas, ni nada.
+
+Existen varias formas de solucionar esto para poder aceptar contribuciones. Una de ellas es añadir a cada persona de nuestro equipo como colaborador de nuestro repositorio.
+
+Solo debemos entrar a la configuración de colaboradores de nuestro proyecto (`Repositorio > Settings > Manage access > Invite a collaborator`) y añadir el email o username de los nuevos colaboradores.
+
+<div align="center"> 
+  <img src="readme_img/colaborador.png" width="">
+</div>
+
 ## Flujos de trabajo profesionales
 ## Multiples entornos de trabajo
 ## Comandos en Git para casos de emergencia
