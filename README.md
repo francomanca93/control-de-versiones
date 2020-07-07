@@ -26,6 +26,8 @@ El contenido de este documento son apuntes del [Curso profesional de Git y GitHu
   - [¿Qué es el staging y los repositorios? Ciclo básico de trabajo en Git](#¿Qué-es-el-staging-y-los-repositorios?-Ciclo-básico-de-trabajo-en-Git)
     - [Ciclo de vida o estados de los archivos en Git](#Ciclo-de-vida-o-estados-de-los-archivos-en-Git)
     - [Ramas o branch's y cómo funciona un Merge en Git](#Ramas-o-branch's-y-cómo-funciona-un-Merge-en-Git)
+    - [Crea un repositorio de Git y haz tu primer commit](#Crea-un-repositorio-de-Git-y-haz-tu-primer-commit)
+    - [Configurando usuario en Git](#Configurando-usuario-en-Git)
     - [Analizar cambios en los archivos de tu proyecto con Git](#Analizar-cambios-en-los-archivos-de-tu-proyecto-con-Git)
 - [Flujo de trabajo básico en Git](#Flujo-de-trabajo-básico-en-Git)
   - [Flujo de trabajo básico con un repositorio remoto](#Flujo-de-trabajo-básico-con-un-repositorio-remoto)
@@ -229,12 +231,27 @@ Le indicaremos a Git que queremos crear un nuevo repositorio para utilizar su si
 
 Recuerda que al ejecutar este comando (y de aquí en adelante) vamos a tener una nueva carpeta oculta llamada `.git` con toda la base de datos con cambios atómicos en nuestro proyecto.
 
+### Configurando usuario en Git
+
 Recuerda que Git está optimizado para trabajar en equipo, por lo tanto, debemos darle un poco de información sobre nosotros. No debemos hacerlo todas las veces que ejecutamos un comando, basta con ejecutar solo una sola vez los siguientes comandos con tu información:
 
+#### Usuario global
 ```
 $ git config --global user.email "tu@email.com"
 $ git config --global user.name "Tu Nombre"
 ```
+
+#### Usuario por repositorio
+Es posible configurar un email y nombre distinto para cada repositorio. Si te paras en la raíz de tu copia local puedes editar usuario e email de la siguiente manera:
+
+```
+git config user.name "username-de-user-que-edita-repo"
+git config user.email "usuario-que-edita-repo@email.com"
+```
+Esa configuración pisa la configuración global para ese repositorio en particular.
+
+Todo lo que se indicado guarda relación con el email al cual se atribuye la autoría del commit, que no tiene ninguna relación con la cuenta de github que se utilice para interactuar con el remoto via pull/push.
+
 
 Existen muchas otras configuraciones de Git que puedes encontrar ejecutando el comando `git config --list` (o solo `git config` para ver una explicación más detallada).
 
