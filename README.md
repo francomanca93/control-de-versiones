@@ -44,6 +44,7 @@ El contenido de este documento son apuntes del [Curso profesional de Git y GitHu
 - [Flujos de trabajo profesionales](#Flujos-de-trabajo-profesionales)
   - [Haciendo merge de ramas de desarrollo a master](#Haciendo-merge-de-ramas-de-desarrollo-a-master)
   - [Pull Request](#Pull-Request)
+  - [Utilizando Pull Requests en GitHub](#Utilizando-Pull-Requests-en-GitHub)
 - [Multiples entornos de trabajo](#Multiples-entornos-de-trabajo)
 - [Comandos en Git para casos de emergencia](#Comandos-en-Git-para-casos-de-emergencia)
 - [Bonus](#Bonus)
@@ -785,6 +786,83 @@ Un **pull requests** es la acción de validar un código que se va a _mergear_ d
 
 
 Los **pull requests** también son importantes porque permiten a personas que no son colaboradores, trabajar y apoyar nuestro proyecto. 
+
+### Utilizando Pull Requests en GitHub
+
+Un **pull request** es una funcionalidad de github (en gitlab llamada **merge request** y en bitbucket **push request**), en la que un colaborador pide que revisen sus cambios antes de hacer merge a una rama, normalmente master.
+
+Al hacer un pull request se genera una conversación que pueden seguir los demás usuarios del repositorio, así como autorizar y rechazar los cambios.
+
+El flujo del pull request es el siguiente:
+
+1. Se trabaja en una rama paralela los cambios que se desean (`git checkout nombre_rama`)
+2. Se hace un commit a la rama (`git commit -am "Comentario"`)
+3. Se suben al remoto los cambios (`git push origin nombre_rama`)
+4. En GitHub se hace el pull request comparando la rama master con la rama del fix (o la que hayamos creado para tal próposito).
+
+- Usuario 1. Hará el merge a la rama master. 
+<div align="center"> 
+  <img src="readme_img/pull-1.png" width="">
+</div>
+
+- Luego nos iremos a una pantalla como la siguiente:
+<div align="center"> 
+  <img src="readme_img/pull-2.png" width="">
+</div>
+
+
+5. Uno, o varios colaboradores revisan que el código sea correcto y dan feedback (en el chat del pull request).
+
+- Usuario 2 (u otros reviewers) verán que hay pull request o les llegará un mensaje a la bandeja de entrada.
+
+<div align="center"> 
+  <img src="readme_img/pull-3.png" width="">
+</div>
+
+- Le aparecerá una pantalla como la siguiente: 
+
+<div align="center"> 
+  <img src="readme_img/pull-4.png" width="">
+</div>
+
+- El usuario reviewer puede ver los cambios y puede:
+  - Comentar
+  - Aprobar
+  - Pedir que se haga cambios
+<div align="center"> 
+  <img src="readme_img/pull-5.png" width="">
+</div>
+
+- Si pedimos una corrección nuestro pull request se verá como sigue:
+
+<div align="center"> 
+  <img src="readme_img/pull-6.png" width="">
+</div>
+
+6. El colaborador  o el que está a cargo de la rama hace los cambios que desea/debe en la rama y lo vuelve a subir al remoto (automáticamente jala la historia de los cambios que se hagan en la rama, en remoto).
+
+<div align="center"> 
+  <img src="readme_img/pull-7.png" width="">
+</div>
+
+7. Se aceptan los cambios en GitHub (por parte de el/la/los reviewers)
+
+<div align="center"> 
+  <img src="readme_img/pull-8.png" width="">
+</div>
+
+8. Se hace merge a master desde GitHub
+
+<div align="center"> 
+  <img src="readme_img/pull-9.png" width="">
+</div>
+
+- Finalmente el pull request queda como sigue:
+<div align="center"> 
+  <img src="readme_img/pull-10.png" width="">
+</div>
+
+> Importante: Cuando se modifica una rama, también se modifica el pull request.
 
 ## Multiples entornos de trabajo
 ## Comandos en Git para casos de emergencia
