@@ -42,7 +42,8 @@ El contenido de este documento son apuntes del [Curso profesional de Git y GitHu
   - [Visualización árbol en Git](#Visualización-árbol-en-Git)
   - [Tags y versiones en Git y GitHub](#Tags-y-versiones-en-Git-y-GitHub)
 - [Flujos de trabajo profesionales](#Flujos-de-trabajo-profesionales)
-- [Haciendo merge de ramas de desarrollo a master](#Haciendo-merge-de-ramas-de-desarrollo-a-master)
+  - [Haciendo merge de ramas de desarrollo a master](#Haciendo-merge-de-ramas-de-desarrollo-a-master)
+  - [Pull Request](#Pull-Request)
 - [Multiples entornos de trabajo](#Multiples-entornos-de-trabajo)
 - [Comandos en Git para casos de emergencia](#Comandos-en-Git-para-casos-de-emergencia)
 - [Bonus](#Bonus)
@@ -767,6 +768,23 @@ En la siguiente imagen se puede ver un pequeño flujo de trabajo con el [proyect
   <img src="readme_img/flujo-trabajo-ramas.png" width="">
 </div>
 
+### Pull Request
+
+En un entorno profesional normalmente se bloquea la rama **master**, y para enviar código a dicha rama pasa por un **code review** y luego de su aprobación se unen códigos con los llamados **pull request**.
+
+Para realizar pruebas enviamos el código a servidores que normalmente los llamamos **staging develop** (servidores de pruebas) luego de que se realizan las pruebas pertinentes tanto de código como de la aplicación estos pasan a el servidor de producción con el ya antes mencionado **pull request**.
+<div align="center"> 
+  <img src="readme_img/tipos-server.png" width="">
+</div>
+
+Un **pull requests** es la acción de validar un código que se va a _mergear_ de una rama a otra. En este proceso de validación pueden entrar los factores que queramos: Builds (validaciones automáticas), asignación de código a tareas, validaciones manuales por parte del equipo, despliegue, etc. 
+
+<div align="center"> 
+  <img src="readme_img/github-process.png" width="">
+</div>
+
+
+Los **pull requests** también son importantes porque permiten a personas que no son colaboradores, trabajar y apoyar nuestro proyecto. 
 
 ## Multiples entornos de trabajo
 ## Comandos en Git para casos de emergencia
