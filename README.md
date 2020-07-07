@@ -42,6 +42,7 @@ El contenido de este documento son apuntes del [Curso profesional de Git y GitHu
   - [Visualización árbol en Git](#Visualización-árbol-en-Git)
   - [Tags y versiones en Git y GitHub](#Tags-y-versiones-en-Git-y-GitHub)
 - [Flujos de trabajo profesionales](#Flujos-de-trabajo-profesionales)
+- [Haciendo merge de ramas de desarrollo a master](#Haciendo-merge-de-ramas-de-desarrollo-a-master)
 - [Multiples entornos de trabajo](#Multiples-entornos-de-trabajo)
 - [Comandos en Git para casos de emergencia](#Comandos-en-Git-para-casos-de-emergencia)
 - [Bonus](#Bonus)
@@ -748,6 +749,25 @@ Solo debemos entrar a la configuración de colaboradores de nuestro proyecto (`R
 </div>
 
 ## Flujos de trabajo profesionales
+
+### Haciendo merge de ramas de desarrollo a master
+
+1. Crear ramas. 
+1. Agregar a los colaboradores del proyecto al proyecto.
+1. Asignar una rama a cada programador
+1. El programador baja el repositorio con `git pull origin master`
+1. El programador cambia de rama a la asignada por el product  manager, CTO o encargado el proyecto.
+1. El programador trabaja en esa rama y hace commits
+1. El programador comprueba que no hayan cambios en sus ramas y las actualiza con `git pull origin #nombre_rama`
+1. El programador sube su trabajo con `git push origin #nombre_rama`
+1. El jefe baja y unifica todos los cambios con `git merge #nombre_rama`.
+
+En la siguiente imagen se puede ver un pequeño flujo de trabajo con el [proyecto hyperblog](https://github.com/francomanca93/hyperblog) y con dos autores y dos ramas diferentes. Luego a estas se le hacen merge a master.
+<div align="center"> 
+  <img src="readme_img/flujo-trabajo-ramas.png" width="">
+</div>
+
+
 ## Multiples entornos de trabajo
 ## Comandos en Git para casos de emergencia
 ## Bonus
