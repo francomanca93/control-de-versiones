@@ -45,7 +45,8 @@ El contenido de este documento son apuntes del [Curso profesional de Git y GitHu
   - [Haciendo merge de ramas de desarrollo a master](#Haciendo-merge-de-ramas-de-desarrollo-a-master)
   - [Pull Request](#Pull-Request)
   - [Utilizando Pull Requests en GitHub](#Utilizando-Pull-Requests-en-GitHub)
-  [Creando un Fork, contribuyendo a un repositorio](#Creando-un-Fork,-contribuyendo-a-un-repositorio)
+  - [Creando un Fork, contribuyendo a un repositorio](#Creando-un-Fork,-contribuyendo-a-un-repositorio)
+  - [Ignorar archivos en el repositorio con .gitignore](#Ignorar-archivos-en-el-repositorio-con-.gitignore)
 - [Multiples entornos de trabajo](#Multiples-entornos-de-trabajo)
 - [Comandos en Git para casos de emergencia](#Comandos-en-Git-para-casos-de-emergencia)
 - [Bonus](#Bonus)
@@ -870,8 +871,7 @@ El flujo del pull request es el siguiente:
 Para participar en un proyecto existente, en el que no tengas permisos de escritura, puedes bifurcarlo o hacer un **fork**. Esto consiste en crear una copia completa del repositorio totalmente bajo tu control y en tu cuenta.
 
 <div align="center"> 
-  <img src="readme_img/pull-request.png
-" width="">
+  <img src="readme_img/pull-request.png" width="">
 </div>
 
 - Los pasos para bajarse el repositorio: 
@@ -892,6 +892,19 @@ Para participar en un proyecto existente, en el que no tengas permisos de escrit
 </div>
 
 Cuando hacemos un fork de un repositorio, se hace una copia exacta del repositorio original que podemos utilizar como un repositorio git cualquiera. Después de hacer fork tendremos dos repositorios git idénticos pero con distinta URL. Finalizado el proceso tendremos dos respositorios independientes que pueden cada uno evolucionar de forma autónoma. GitHub nos permite a su vez comparar los cambios con el proyecto original para poder aportar mediante un pull request. 
+
+### Ignorar archivos en el repositorio con .gitignore
+Por diversas razones, **no todos los archivos** que agregas a un proyecto **deberían guardarse** en un repositorio, ésto porque hay archivos que no todo el mundo debería de ver, y hay archivos que al estar en el repositorio alentan el proceso de desarrollo (por ejemplo los binary large objects, blob, que se tardan en descargarse).
+
+
+Para que no se suban estos archivos no deseados se puede crear un archivo con el nombre **.gitignore** en la raíz del repositorio con las reglas para los archivos que no se deberían subir (ver [sintaxis de los .gitignore](https://git-scm.com/docs/gitignore)).
+
+
+Las razones principales para tomar la decisión de no agregar un archivo a un repositorio son:
+
+- Es un archivo con contraseñas (normalmente con la extensión .env)
+- Es un blob (binary large object, objeto binario grande), mismos que son difíciles de gestionar en git.
+- Son archivos que se generan corriendo comandos, por ejemplo la carpeta node_modules que genera npm al correr el comando npm install
 
 ## Multiples entornos de trabajo
 ## Comandos en Git para casos de emergencia
