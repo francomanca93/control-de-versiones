@@ -47,6 +47,7 @@ El contenido de este documento son apuntes del [Curso profesional de Git y GitHu
   - [Utilizando Pull Requests en GitHub](#Utilizando-Pull-Requests-en-GitHub)
   - [Creando un Fork, contribuyendo a un repositorio](#Creando-un-Fork,-contribuyendo-a-un-repositorio)
   - [Ignorar archivos en el repositorio con .gitignore](#Ignorar-archivos-en-el-repositorio-con-.gitignore)
+  - [-Readme.md es una excelente práctica](#-Readme.md-es-una-excelente-práctica)
 - [Multiples entornos de trabajo](#Multiples-entornos-de-trabajo)
 - [Comandos en Git para casos de emergencia](#Comandos-en-Git-para-casos-de-emergencia)
 - [Bonus](#Bonus)
@@ -905,6 +906,12 @@ Las razones principales para tomar la decisión de no agregar un archivo a un re
 - Es un archivo con contraseñas (normalmente con la extensión .env)
 - Es un blob (binary large object, objeto binario grande), mismos que son difíciles de gestionar en git.
 - Son archivos que se generan corriendo comandos, por ejemplo la carpeta node_modules que genera npm al correr el comando npm install
+
+### -Readme.md es una excelente práctica
+
+**-README.md** es una excelente práctica en tus proyectos, **md** significa **Markdown**, que es una especie de código que te permite cambiar la manera en que se ve un archivo de texto.
+
+Lo interesante de Markdown es que funciona en muchas páginas, por ejemplo la edición en Wikipedia; es un lenguaje intermedio que no es HTML, no es texto plano, es una manera de crear excelentes texto formateados.
 
 ## Multiples entornos de trabajo
 ## Comandos en Git para casos de emergencia
