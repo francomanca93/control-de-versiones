@@ -45,6 +45,7 @@ El contenido de este documento son apuntes del [Curso profesional de Git y GitHu
   - [Haciendo merge de ramas de desarrollo a master](#Haciendo-merge-de-ramas-de-desarrollo-a-master)
   - [Pull Request](#Pull-Request)
   - [Utilizando Pull Requests en GitHub](#Utilizando-Pull-Requests-en-GitHub)
+  [Creando un Fork, contribuyendo a un repositorio](#Creando-un-Fork,-contribuyendo-a-un-repositorio)
 - [Multiples entornos de trabajo](#Multiples-entornos-de-trabajo)
 - [Comandos en Git para casos de emergencia](#Comandos-en-Git-para-casos-de-emergencia)
 - [Bonus](#Bonus)
@@ -863,6 +864,34 @@ El flujo del pull request es el siguiente:
 </div>
 
 > Importante: Cuando se modifica una rama, también se modifica el pull request.
+
+### Creando un Fork, contribuyendo a un repositorio
+
+Para participar en un proyecto existente, en el que no tengas permisos de escritura, puedes bifurcarlo o hacer un **fork**. Esto consiste en crear una copia completa del repositorio totalmente bajo tu control y en tu cuenta.
+
+<div align="center"> 
+  <img src="readme_img/pull-request.png
+" width="">
+</div>
+
+- Los pasos para bajarse el repositorio: 
+1. Hacer Fork Directamente en GitHub
+2. Hacer un clone del repositorio: `git clone url:repositorio_https_o_ssh`
+3. Ahora se puede modificar el repositorio en local. 
+4. Hacer push con cambios realizados: `git push origin master`
+5. Hacer la petición de una Pull Request (Hasta esperar aprobación).
+
+- Los pasos para descargar cambios directamente del repositorio maestro (El dueño es el Admin “Quien aprueba ó no las Pull Request”):
+1. Agrego un nuevo enlace al repositorio: `git remote add “Nombre (Preferencia upstream)” url:repositorio_https_o_ssh`
+2. Verificar que se realizo correctamente: `git remote -v`
+3. Descargar cambios: `git pull upstream master`
+4. Mandar los cambios de upstream a nuestro origin `git push origin master`
+
+<div align="center"> 
+  <img src="readme_img/clone.png" width="">
+</div>
+
+Cuando hacemos un fork de un repositorio, se hace una copia exacta del repositorio original que podemos utilizar como un repositorio git cualquiera. Después de hacer fork tendremos dos repositorios git idénticos pero con distinta URL. Finalizado el proceso tendremos dos respositorios independientes que pueden cada uno evolucionar de forma autónoma. GitHub nos permite a su vez comparar los cambios con el proyecto original para poder aportar mediante un pull request. 
 
 ## Multiples entornos de trabajo
 ## Comandos en Git para casos de emergencia
