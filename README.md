@@ -48,6 +48,7 @@ El contenido de este documento son apuntes del [Curso profesional de Git y GitHu
   - [Creando un Fork, contribuyendo a un repositorio](#Creando-un-Fork,-contribuyendo-a-un-repositorio)
   - [Ignorar archivos en el repositorio con .gitignore](#Ignorar-archivos-en-el-repositorio-con-.gitignore)
   - [-Readme.md es una excelente práctica](#-Readme.md-es-una-excelente-práctica)
+  - [Tu sitio web público con GitHub Pages](#Tu-sitio-web-público-con-GitHub-Pages)
 - [Multiples entornos de trabajo](#Multiples-entornos-de-trabajo)
 - [Comandos en Git para casos de emergencia](#Comandos-en-Git-para-casos-de-emergencia)
 - [Bonus](#Bonus)
