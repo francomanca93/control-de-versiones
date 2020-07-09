@@ -913,6 +913,11 @@ Las razones principales para tomar la decisión de no agregar un archivo a un re
 
 Lo interesante de Markdown es que funciona en muchas páginas, por ejemplo la edición en Wikipedia; es un lenguaje intermedio que no es HTML, no es texto plano, es una manera de crear excelentes texto formateados.
 
+### Tu sitio web público con GitHub Pages
+
+GitHub tiene un servicio de hosting gratis llamado [GitHub Pages](https://pages.github.com/).
+En el sitio web se explica paso a paso como crear tu index.html y crear tu primer pagina. Se puede tener un repositorio donde el contenido del repositorio se vaya a GitHub y se vea online.
+
 ## Multiples entornos de trabajo
 ## Comandos en Git para casos de emergencia
 ## Bonus
