@@ -50,6 +50,7 @@ El contenido de este documento son apuntes del [Curso profesional de Git y GitHu
   - [-Readme.md es una excelente práctica](#-Readme.md-es-una-excelente-práctica)
   - [Tu sitio web público con GitHub Pages](#Tu-sitio-web-público-con-GitHub-Pages)
 - [Multiples entornos de trabajo](#Multiples-entornos-de-trabajo)
+  [Git Rebase: reorganizando el trabajo realizado](#Git-Rebase:-reorganizando-el-trabajo-realizado)
 - [Comandos en Git para casos de emergencia](#Comandos-en-Git-para-casos-de-emergencia)
 - [Bonus](#Bonus)
 
@@ -920,5 +921,38 @@ GitHub tiene un servicio de hosting gratis llamado [GitHub Pages](https://pages.
 En el sitio web se explica paso a paso como crear tu index.html y crear tu primer pagina. Se puede tener un repositorio donde el contenido del repositorio se vaya a GitHub y se vea online.
 
 ## Multiples entornos de trabajo
+
+### Git Rebase: reorganizando el trabajo realizado
+
+> NOTA: El comando rebase es una mala práctica. 
+
+Con rebase puedes recoger todos los cambios confirmados en una rama y ponerlos sobre otra.
+
+Es el proceso de mover o combinar una secuencia de confirmaciones en una nueva confirmación base. La reorganización es muy útil y se visualiza fácilmente en el contexto de un flujo de trabajo de ramas de funciones. El proceso general se puede visualizar de la siguiente manera.
+
+<div align="center"> 
+  <img src="readme_img/rebase1.jpg" width="">
+</div>
+
+Para hacer un rebase en la rama feature de la rama master, correrías los siguientes comandos:
+
+1. Cambiamos a la rama que queremos traer los cambios:
+`$ git checkout feature`
+2. Aplicamos rebase para traer los cambios de la rama que queremos:`$ git rebase master`
+
+Esto trasplanta la rama feature desde su locación actual hacia la punta de la rama master:
+
+<div align="center"> 
+  <img src="readme_img/rebase2.jpg" width="">
+</div>
+
+Ahora, falta fusionar la rama feature con la rama master
+1. `git checkout master`
+2. `git rebase feature`
+
+> **No reorganices el historial público**. Nunca debes reorganizar las confirmaciones una vez que se hayan enviado a un repositorio público. La reorganización sustituiría las confirmaciones antiguas por las nuevas y parecería que esa parte del historial de tu proyecto se hubiera desvanecido de repente.
+
+Excelente turorial sobre [Git Rabase](https://code.tutsplus.com/es/tutorials/rewriting-history-with-git-rebase--cms-23191) si quieres saber como utilizarlo mas en profundidad.  
+
 ## Comandos en Git para casos de emergencia
 ## Bonus
