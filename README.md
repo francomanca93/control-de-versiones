@@ -59,6 +59,7 @@ El contenido de este documento son apuntes del [Curso profesional de Git y GitHu
     - [Eliminar elementos del stash](#Eliminar-elementos-del-stash)
     - [Consideraciones](#Consideraciones)
   - [Git Clean: limpiar tu proyecto de archivos no deseados](#Git-Clean:-limpiar-tu-proyecto-de-archivos-no-deseados)
+  - [Git cherry-pick: traer commits viejos al head de un branch](#Git-cherry-pick:-traer-commits-viejos-al-head-de-un-branch)
 - [Comandos en Git para casos de emergencia](#Comandos-en-Git-para-casos-de-emergencia)
 - [Bonus](#Bonus)
 
@@ -1072,6 +1073,22 @@ A veces creamos archivos cuando estamos realizando nuestro proyecto que realment
 - El parametro -d ayuda con el borrado de carpetas untracked. Por ejemplo: 
 
 `$ git clean -df`
+
+### Git cherry-pick: traer commits viejos al head de un branch
+
+Existe un mundo alternativo en el cual vamos avanzando en una rama pero necesitamos en master uno de esos avances de la rama, para eso utilizamos el comando:
+
+`$ git cherry-pick IDCommit`.
+
+- Cherry-pick es el copia y pega de commits en otras ramas. 
+- Al momento de hacer un merge de la rama donde copiaste ese commit con la rama donde la pegaste, se duplicara ese cambio y tendrás que eliminar uno de ellos.
+- Si te equivocas y haces el `$ git cherry-pick IDCommit` en el mismo branch que lo estas sacando te sale un error de versiones, puedes deshacer el cherry-pick con `$ git cherry-pick --abort`
+
+<div align="center"> 
+  <img src="readme_img/git-cherry-pick.svg" width="">
+</div>
+
+> NOTA: cherry-pick es una **mala práctica** porque significa que estamos reconstruyendo la historia, usa cherry-pick con sabiduría. Si no sabes lo que estás haciendo ten mucho cuidado.
 
 ## Comandos en Git para casos de emergencia
 ## Bonus
