@@ -58,6 +58,7 @@ El contenido de este documento son apuntes del [Curso profesional de Git y GitHu
     - [Crear una rama con el stash](#Crear-una-rama-con-el-stash)
     - [Eliminar elementos del stash](#Eliminar-elementos-del-stash)
     - [Consideraciones](#Consideraciones)
+  - [Git Clean: limpiar tu proyecto de archivos no deseados](#Git-Clean:-limpiar-tu-proyecto-de-archivos-no-deseados)
 - [Comandos en Git para casos de emergencia](#Comandos-en-Git-para-casos-de-emergencia)
 - [Bonus](#Bonus)
 
@@ -1055,6 +1056,22 @@ Donde el **num_stash** es el índice del cambio guardado.
 
 - Al crear un stash tomará los archivos que han sido modificados y eliminados. Para que tome un archivo creado es necesario agregarlo al Staging Area con `git add nombre_archivo` con la intención de que git tenga un seguimiento de ese archivo, o también utilizando el comando `git stash -u` (que guardará en el stash los archivos que no estén en el staging).
 - Al aplicar un stash este no se elimina, es buena práctica eliminarlo.
+
+### Git Clean: limpiar tu proyecto de archivos no deseados
+
+A veces creamos archivos cuando estamos realizando nuestro proyecto que realmente no forman parte de nuestro directorio de trabajo, que no se deberían agregar y lo sabemos.
+
+- Para saber qué archivos vamos a borrar tecleamos
+
+`$ git clean --dry-run`
+
+- Para borrar todos los archivos listados (que no son carpetas) tecleamos:
+
+`$ git clean -f`
+
+- El parametro -d ayuda con el borrado de carpetas untracked. Por ejemplo: 
+
+`$ git clean -df`
 
 ## Comandos en Git para casos de emergencia
 ## Bonus
