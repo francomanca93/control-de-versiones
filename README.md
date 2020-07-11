@@ -65,6 +65,9 @@ El contenido de este documento son apuntes del [Curso profesional de Git y GitHu
   - [Git Reset y Reflog: úsese en caso de emergencia](#Git-reset-y-Reflog:-úsese-en-caso-de-emergencia)
   - [Buscar en archivos y commits de Git con Grep y log](#Buscar-en-archivos-y-commits-de-Git-con-Grep-y-log)
 - [Bonus](#Bonus)
+  - [git shortlog: Visualizando a los commits](#git-shortlog:-Visualizando-a-los-commits)
+  - [git blame: Vizualizando quien hace que](#git-blame:-Vizualizando-quien-hace-que)
+  - [git branch: Visualizando ramas](#git-branch:-Visualizando-ramas)
 
 
 ## Introducción a Git
@@ -1149,3 +1152,17 @@ Para buscar utilizamos el comando git grep color y nos buscará en todo el proye
 - Si queremos buscar cuántas veces utilizamos un atributo de HTML lo hacemos con `$ git grep -c "<p>"`
 
 ## Bonus
+
+### git shortlog: Visualizando a los commits
+- `$ git shortlog`: Muestra la descripción de los commits y la cantidad por cada persona.
+- `$ git shortlog -sn`: Muestra la cantidad de commits por cada persona.
+- `$ git shortlog -sn --all`: Muestra todos los commits por persona, incluyendo los borrados.
+- `$ git shortlog -sn --all --no-merges`: Muestra las estadisticas de los commmits del repositorio donde estoy. (no incluye los merge).
+- `$ git config --global alias.stats “shortlog -sn --all --no-merges”`: Configura el comando “shortlog -sn --all --no-merges” en un Alias en las configuraciones globales de git del pc
+### git blame: Vizualizando quien hace que
+- `$ git blame -c blogpost.html`: Muestra quien ha hecho cambios en dicho archivo linea por linea. 
+- `$ git blame --help`:  Muestra la documentación para ese comando.
+- `$ git blame archivo -L 35, 60 -c`: Muestra quien escribio el codigo con informacion de la linea 35 a la 60, EJ: git blame css/estilos.css -L 35, 60 -c
+### git branch: Visualizando ramas
+- `$ git branch -r`: Muestra las Ramas remotas de GitHub (o en el servido que usemos).
+- `$ git branch -a`: Muestra todas las ramas, las del repositorio local y las del reposotorio remoto.
