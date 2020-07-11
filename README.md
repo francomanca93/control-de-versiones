@@ -21,7 +21,6 @@ El contenido de este documento son apuntes del [Curso profesional de Git y GitHu
     - [Editores de código, archivos binarios y de texto plano](#Editores-de-código,-archivos-binarios-y-de-texto-plano)
     - [Introducción a la terminal y línea de comando](#Introdución-a-la-terminal-y-línea-de-comando)
       - [Comandos básicos en la terminal](#Comandos-básicos-en-la-terminal)
-
 - [Comandos básicos de Git](#Comandos-básicos-de-Git)
   - [¿Qué es el staging y los repositorios? Ciclo básico de trabajo en Git](#¿Qué-es-el-staging-y-los-repositorios?-Ciclo-básico-de-trabajo-en-Git)
     - [Ciclo de vida o estados de los archivos en Git](#Ciclo-de-vida-o-estados-de-los-archivos-en-Git)
