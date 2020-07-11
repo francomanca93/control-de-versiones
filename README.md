@@ -61,6 +61,7 @@ El contenido de este documento son apuntes del [Curso profesional de Git y GitHu
   - [Git Clean: limpiar tu proyecto de archivos no deseados](#Git-Clean:-limpiar-tu-proyecto-de-archivos-no-deseados)
   - [Git cherry-pick: traer commits viejos al head de un branch](#Git-cherry-pick:-traer-commits-viejos-al-head-de-un-branch)
 - [Comandos en Git para casos de emergencia](#Comandos-en-Git-para-casos-de-emergencia)
+  - [Reconstruir commits en Git con amend](#Reconstruir-commits-en-Git-con-amend)
 - [Bonus](#Bonus)
 
 
@@ -1091,4 +1092,23 @@ Existe un mundo alternativo en el cual vamos avanzando en una rama pero necesita
 > NOTA: cherry-pick es una **mala práctica** porque significa que estamos reconstruyendo la historia, usa cherry-pick con sabiduría. Si no sabes lo que estás haciendo ten mucho cuidado.
 
 ## Comandos en Git para casos de emergencia
+
+### Reconstruir commits en Git con amend
+
+A veces hacemos un commit, pero resulta que no queríamos mandarlo porque faltaba algo más. Utilizamos amend (en inglés es remendar) y lo que hará es que los cambios que hicimos nos los agregará al commit anterior.
+
+Puede modificar el commit más reciente (enmendar) en la misma rama ejecutando:
+
+`$ git add archivo_a_agregar`
+
+`$ git commit --amend`
+
+<div align="center"> 
+  <img src="readme_img/ammend.png" width="">
+</div>
+
+Este comando sirve para agregar archivos nuevos o actualizar el commit anterior y no generar commits innecesarios.
+
+> **Nota**: Es una **mala práctica** hacer ammend de un commit que ya ha sido **pusheado o pulleado** del repositorio remoto. Al momento de hacer ammend con algún _commit_ que esté en remoto va a generar un conflicto que se va a arreglar haciendo un commit adicional mergeando. **Con esto se perderá el beneficio del ammend.**
+
 ## Bonus
