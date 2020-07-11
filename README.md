@@ -62,6 +62,7 @@ El contenido de este documento son apuntes del [Curso profesional de Git y GitHu
   - [Git cherry-pick: traer commits viejos al head de un branch](#Git-cherry-pick:-traer-commits-viejos-al-head-de-un-branch)
 - [Comandos en Git para casos de emergencia](#Comandos-en-Git-para-casos-de-emergencia)
   - [Reconstruir commits en Git con amend](#Reconstruir-commits-en-Git-con-amend)
+  - [Git Reset y Reflog: úsese en caso de emergencia](#Git-reset-y-Reflog:-úsese-en-caso-de-emergencia)
 - [Bonus](#Bonus)
 
 
@@ -1111,4 +1112,26 @@ Este comando sirve para agregar archivos nuevos o actualizar el commit anterior 
 
 > **Nota**: Es una **mala práctica** hacer ammend de un commit que ya ha sido **pusheado o pulleado** del repositorio remoto. Al momento de hacer ammend con algún _commit_ que esté en remoto va a generar un conflicto que se va a arreglar haciendo un commit adicional mergeando. **Con esto se perderá el beneficio del ammend.**
 
+### Git Reset y Reflog: úsese en caso de emergencia
+
+#### Git nunca olvida, git reflog
+
+Git guarda todos los cambios aunque decidas borrarlos, al borrar un cambio lo que estás haciendo sólo es actualizar la punta del branch, para gestionar éstas puntas existe un mecanismo llamado registros de referencia o **reflogs**.
+
+La gestión de estos cambios es mediante los hash’es de referencia (o ref) que son apuntadores a los commits.
+
+Los reflogs registran cuándo se actualizaron las referencias de Git en el repositorio local **(sólo en el local)**, por lo que si deseas ver cómo has modificado la historia puedes utilizar el comando:
+
+- `$ git reflog`
+
+git checkout Puedes moverte sin realizar ningún cambio al commit exacto de la ref
+
+- `$ git checkout IDCommit`
+
+**¿Qué pasa cuando todo se rompe y no sabemos qué está pasando?** Con `git reset HashDelHEAD` nos devolveremos al estado en que el proyecto funcionaba.
+
+- `$ git reset --soft HashDelHEAD`: te mantiene lo que tengas en staging ahí.
+- `$ git reset --hard HashDelHEAD`: resetea absolutamente todo incluyendo lo que tengas en staging.
+
+**git reset es una mala práctica**, no deberías usarlo en ningún momento; debe ser nuestro último recurso.
 ## Bonus
