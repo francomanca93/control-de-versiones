@@ -68,6 +68,7 @@ El contenido de este documento son apuntes del [Curso profesional de Git y GitHu
   - [git shortlog: Visualizando a los commits](#git-shortlog:-Visualizando-a-los-commits)
   - [git blame: Vizualizando quien hace que](#git-blame:-Vizualizando-quien-hace-que)
   - [git branch: Visualizando ramas](#git-branch:-Visualizando-ramas)
+- [Resumen de comandos y herramientas dev ops](#Resumen-de-comandos-y-herramientas-dev-ops)
 
 
 ## Introducción a Git
@@ -1166,3 +1167,19 @@ Para buscar utilizamos el comando git grep color y nos buscará en todo el proye
 ### git branch: Visualizando ramas
 - `$ git branch -r`: Muestra las Ramas remotas de GitHub (o en el servido que usemos).
 - `$ git branch -a`: Muestra todas las ramas, las del repositorio local y las del reposotorio remoto.
+
+## Resumen de comandos y herramientas dev ops
+
+En el siguiente gráfico se puede ver como es el transporte de datos y que comandos utilizar para cada transporte desde el stash hasta a un repositorio remoto y viceversa
+
+<div align="center"> 
+  <img src="readme_img/resumen-comandos.png" width="">
+</div>
+
+En los siguientes gráficos se puede ver el ciclo continuo de desarrollo de un dev ops.
+
+<div align="center"> 
+  <img src="readme_img/devops1.png" width="">
+  <img src="readme_img/devops2.png" width="">
+
+</div>
