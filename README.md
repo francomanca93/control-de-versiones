@@ -49,24 +49,24 @@ El contenido de este documento son apuntes del [Curso profesional de Git y GitHu
   - [-Readme.md es una excelente práctica](#-Readme.md-es-una-excelente-práctica)
   - [Tu sitio web público con GitHub Pages](#Tu-sitio-web-público-con-GitHub-Pages)
 - [Multiples entornos de trabajo](#Multiples-entornos-de-trabajo)
-  - [Git Rebase: reorganizando el trabajo realizado](#Git-Rebase:-reorganizando-el-trabajo-realizado)
-  - [Git Stash: Guardar cambios en memoria y recuperarlos después](#Git-Stash:-Guardar-cambios-en-memoria-y-recuperarlos-después)
+  - [Git Rebase - reorganizando el trabajo realizado](#Git-Rebase---reorganizando-el-trabajo-realizado)
+  - [Git Stash - Guardar cambios en memoria y recuperarlos después](#Git-Stash---Guardar-cambios-en-memoria-y-recuperarlos-después)
     - [git stash](#git-stash)
     - [Obtener elementos del stash](#Obtener-elementos-del-stash)
     - [Listado de elementos en el stash](#Listado-de-elementos-en-el-stash)
     - [Crear una rama con el stash](#Crear-una-rama-con-el-stash)
     - [Eliminar elementos del stash](#Eliminar-elementos-del-stash)
     - [Consideraciones](#Consideraciones)
-  - [Git Clean: limpiar tu proyecto de archivos no deseados](#Git-Clean:-limpiar-tu-proyecto-de-archivos-no-deseados)
-  - [Git cherry-pick: traer commits viejos al head de un branch](#Git-cherry-pick:-traer-commits-viejos-al-head-de-un-branch)
+  - [Git Clean - limpiar tu proyecto de archivos no deseados](#Git-Clean---limpiar-tu-proyecto-de-archivos-no-deseados)
+  - [Git cherry-pick - traer commits viejos al head de un branch](#Git-cherry-pick---traer-commits-viejos-al-head-de-un-branch)
 - [Comandos en Git para casos de emergencia](#Comandos-en-Git-para-casos-de-emergencia)
   - [Reconstruir commits en Git con amend](#Reconstruir-commits-en-Git-con-amend)
-  - [Git Reset y Reflog: úsese en caso de emergencia](#Git-reset-y-Reflog:-úsese-en-caso-de-emergencia)
+  - [Git Reset y Reflog - úsese en caso de emergencia](#Git-reset-y-Reflog---úsese-en-caso-de-emergencia)
   - [Buscar en archivos y commits de Git con Grep y log](#Buscar-en-archivos-y-commits-de-Git-con-Grep-y-log)
 - [Bonus](#Bonus)
-  - [git shortlog: Visualizando a los commits](#git-shortlog:-Visualizando-a-los-commits)
-  - [git blame: Vizualizando quien hace que](#git-blame:-Vizualizando-quien-hace-que)
-  - [git branch: Visualizando ramas](#git-branch:-Visualizando-ramas)
+  - [git shortlog - Visualizando a los commits](#git-shortlog---Visualizando-a-los-commits)
+  - [git blame - Vizualizando quien hace que](#git-blame---Vizualizando-quien-hace-que)
+  - [git branch - Visualizando ramas](#git-branch---Visualizando-ramas)
 - [Resumen de comandos y herramientas dev ops](#Resumen-de-comandos-y-herramientas-dev-ops)
 
 
@@ -937,7 +937,7 @@ En el sitio web se explica paso a paso como crear tu index.html y crear tu prime
 
 ## Multiples entornos de trabajo
 
-### Git Rebase: reorganizando el trabajo realizado
+### Git Rebase - reorganizando el trabajo realizado
 
 > NOTA: El comando rebase es una mala práctica. 
 
@@ -969,7 +969,7 @@ Ahora, falta fusionar la rama feature con la rama master
 
 Excelente turorial sobre [Git Rabase](https://code.tutsplus.com/es/tutorials/rewriting-history-with-git-rebase--cms-23191) si quieres saber como utilizarlo mas en profundidad.  
 
-### Git Stash: Guardar cambios en memoria y recuperarlos después
+### Git Stash - Guardar cambios en memoria y recuperarlos después
 
 Cuando necesitamos regresar en el tiempo porque borramos alguna línea de código pero no queremos pasarnos a otra rama porque nos daría un error ya que debemos pasar ese “mal cambio” que hicimos a stage, podemos usar `git stash` para regresar el cambio anterior que hicimos.
 
@@ -1064,7 +1064,7 @@ Donde el **num_stash** es el índice del cambio guardado.
 - Al crear un stash tomará los archivos que han sido modificados y eliminados. Para que tome un archivo creado es necesario agregarlo al Staging Area con `git add nombre_archivo` con la intención de que git tenga un seguimiento de ese archivo, o también utilizando el comando `git stash -u` (que guardará en el stash los archivos que no estén en el staging).
 - Al aplicar un stash este no se elimina, es buena práctica eliminarlo.
 
-### Git Clean: limpiar tu proyecto de archivos no deseados
+### Git Clean - limpiar tu proyecto de archivos no deseados
 
 A veces creamos archivos cuando estamos realizando nuestro proyecto que realmente no forman parte de nuestro directorio de trabajo, que no se deberían agregar y lo sabemos.
 
@@ -1080,7 +1080,7 @@ A veces creamos archivos cuando estamos realizando nuestro proyecto que realment
 
 `$ git clean -df`
 
-### Git cherry-pick: traer commits viejos al head de un branch
+### Git cherry-pick - traer commits viejos al head de un branch
 
 Existe un mundo alternativo en el cual vamos avanzando en una rama pero necesitamos en master uno de esos avances de la rama, para eso utilizamos el comando:
 
@@ -1116,7 +1116,7 @@ Este comando sirve para agregar archivos nuevos o actualizar el commit anterior 
 
 > **Nota**: Es una **mala práctica** hacer ammend de un commit que ya ha sido **pusheado o pulleado** del repositorio remoto. Al momento de hacer ammend con algún _commit_ que esté en remoto va a generar un conflicto que se va a arreglar haciendo un commit adicional mergeando. **Con esto se perderá el beneficio del ammend.**
 
-### Git Reset y Reflog: úsese en caso de emergencia
+### Git Reset y Reflog - úsese en caso de emergencia
 
 #### Git nunca olvida, git reflog
 
@@ -1153,17 +1153,17 @@ Para buscar utilizamos el comando git grep color y nos buscará en todo el proye
 
 ## Bonus
 
-### git shortlog: Visualizando a los commits
+### git shortlog - Visualizando a los commits
 - `$ git shortlog`: Muestra la descripción de los commits y la cantidad por cada persona.
 - `$ git shortlog -sn`: Muestra la cantidad de commits por cada persona.
 - `$ git shortlog -sn --all`: Muestra todos los commits por persona, incluyendo los borrados.
 - `$ git shortlog -sn --all --no-merges`: Muestra las estadisticas de los commmits del repositorio donde estoy. (no incluye los merge).
 - `$ git config --global alias.stats “shortlog -sn --all --no-merges”`: Configura el comando “shortlog -sn --all --no-merges” en un Alias en las configuraciones globales de git del pc
-### git blame: Vizualizando quien hace que
+### git blame - Vizualizando quien hace que
 - `$ git blame -c blogpost.html`: Muestra quien ha hecho cambios en dicho archivo linea por linea. 
 - `$ git blame --help`:  Muestra la documentación para ese comando.
 - `$ git blame archivo -L 35, 60 -c`: Muestra quien escribio el codigo con informacion de la linea 35 a la 60, EJ: git blame css/estilos.css -L 35, 60 -c
-### git branch: Visualizando ramas
+### git branch - Visualizando ramas
 - `$ git branch -r`: Muestra las Ramas remotas de GitHub (o en el servido que usemos).
 - `$ git branch -a`: Muestra todas las ramas, las del repositorio local y las del reposotorio remoto.
 
